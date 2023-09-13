@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041A30C02AB210D1008820AB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A30BF2AB210D1008820AB /* ProfileVC.swift */; };
+		0420074F2AB1BB0000C9F983 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420074E2AB1BB0000C9F983 /* DatabaseManager.swift */; };
+		044284FE2AB19BBF0048C34A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044284FD2AB19BBF0048C34A /* GoogleService-Info.plist */; };
 		04DF7B972AB03C620080BC1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7B962AB03C620080BC1A /* AppDelegate.swift */; };
 		04DF7B992AB03C620080BC1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7B982AB03C620080BC1A /* SceneDelegate.swift */; };
-		04DF7B9B2AB03C620080BC1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7B9A2AB03C620080BC1A /* ViewController.swift */; };
+		04DF7B9B2AB03C620080BC1A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7B9A2AB03C620080BC1A /* LoginVC.swift */; };
 		04DF7B9E2AB03C620080BC1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF7B9C2AB03C620080BC1A /* Main.storyboard */; };
 		04DF7BA02AB03C640080BC1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DF7B9F2AB03C640080BC1A /* Assets.xcassets */; };
 		04DF7BA32AB03C650080BC1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF7BA12AB03C650080BC1A /* LaunchScreen.storyboard */; };
+		04DF7BB12AB042A00080BC1A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DF7BB02AB042A00080BC1A /* Colors.xcassets */; };
+		04DF7BB52AB052B70080BC1A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7BB42AB052B70080BC1A /* UIView+Extension.swift */; };
+		04DF7BB82AB052F20080BC1A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7BB72AB052F20080BC1A /* Colors.swift */; };
+		04DF7BBA2AB0530F0080BC1A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7BB92AB0530F0080BC1A /* UIViewController+Extension.swift */; };
+		04DF7BBE2AB053740080BC1A /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7BBD2AB053740080BC1A /* CommonHelper.swift */; };
+		04DF7BC02AB05B6D0080BC1A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7BBF2AB05B6D0080BC1A /* RegisterVC.swift */; };
+		04DF7BC22AB062B60080BC1A /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF7BC12AB062B60080BC1A /* ConversationVC.swift */; };
+		B95E9A013EB4CC390AF95C1F /* Pods_FlashChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6903F6C69DC34549D9FE60BA /* Pods_FlashChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041A30BF2AB210D1008820AB /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		0420074E2AB1BB0000C9F983 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		044284FD2AB19BBF0048C34A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04DF7B932AB03C620080BC1A /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DF7B962AB03C620080BC1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DF7B982AB03C620080BC1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04DF7B9A2AB03C620080BC1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04DF7B9A2AB03C620080BC1A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		04DF7B9D2AB03C620080BC1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04DF7B9F2AB03C640080BC1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DF7BA22AB03C650080BC1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DF7BA42AB03C650080BC1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DF7BB02AB042A00080BC1A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		04DF7BB42AB052B70080BC1A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		04DF7BB72AB052F20080BC1A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		04DF7BB92AB0530F0080BC1A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		04DF7BBD2AB053740080BC1A /* CommonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
+		04DF7BBF2AB05B6D0080BC1A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		04DF7BC12AB062B60080BC1A /* ConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
+		6903F6C69DC34549D9FE60BA /* Pods_FlashChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE4F144C2A37C143CDCFC3F /* Pods-FlashChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashChat.debug.xcconfig"; path = "Target Support Files/Pods-FlashChat/Pods-FlashChat.debug.xcconfig"; sourceTree = "<group>"; };
+		AFEBA4EC8A0D66DC8C3F1B12 /* Pods-FlashChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashChat.release.xcconfig"; path = "Target Support Files/Pods-FlashChat/Pods-FlashChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95E9A013EB4CC390AF95C1F /* Pods_FlashChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0420074D2AB1B9CB00C9F983 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7BBF2AB05B6D0080BC1A /* RegisterVC.swift */,
+				04DF7B9A2AB03C620080BC1A /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		04DF7B8A2AB03C620080BC1A = {
 			isa = PBXGroup;
 			children = (
 				04DF7B952AB03C620080BC1A /* FlashChat */,
 				04DF7B942AB03C620080BC1A /* Products */,
+				F22AD596808D0FDA54490239 /* Pods */,
+				89E3D2DEE447DF1902CD8309 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,113 @@
 		04DF7B952AB03C620080BC1A /* FlashChat */ = {
 			isa = PBXGroup;
 			children = (
-				04DF7B962AB03C620080BC1A /* AppDelegate.swift */,
-				04DF7B982AB03C620080BC1A /* SceneDelegate.swift */,
-				04DF7B9A2AB03C620080BC1A /* ViewController.swift */,
-				04DF7B9C2AB03C620080BC1A /* Main.storyboard */,
+				044284FD2AB19BBF0048C34A /* GoogleService-Info.plist */,
+				04DF7BAB2AB03C8C0080BC1A /* Utilities */,
+				04DF7BAD2AB03C9F0080BC1A /* Models */,
+				04DF7BAC2AB03C960080BC1A /* Controllers */,
+				04DF7BAA2AB03C820080BC1A /* Views */,
 				04DF7B9F2AB03C640080BC1A /* Assets.xcassets */,
-				04DF7BA12AB03C650080BC1A /* LaunchScreen.storyboard */,
 				04DF7BA42AB03C650080BC1A /* Info.plist */,
 			);
 			path = FlashChat;
+			sourceTree = "<group>";
+		};
+		04DF7BAA2AB03C820080BC1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7B9C2AB03C620080BC1A /* Main.storyboard */,
+				04DF7BA12AB03C650080BC1A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04DF7BAB2AB03C8C0080BC1A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7B962AB03C620080BC1A /* AppDelegate.swift */,
+				04DF7B982AB03C620080BC1A /* SceneDelegate.swift */,
+				04DF7BBB2AB0534C0080BC1A /* Helper */,
+				04DF7BB62AB052E30080BC1A /* Enums */,
+				04DF7BB32AB052A00080BC1A /* Extensions */,
+				04DF7BAE2AB042770080BC1A /* ProjectDesign */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		04DF7BAC2AB03C960080BC1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0420074D2AB1B9CB00C9F983 /* Login */,
+				04DF7BC12AB062B60080BC1A /* ConversationVC.swift */,
+				041A30BF2AB210D1008820AB /* ProfileVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04DF7BAD2AB03C9F0080BC1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0420074E2AB1BB0000C9F983 /* DatabaseManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04DF7BAE2AB042770080BC1A /* ProjectDesign */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7BAF2AB0428A0080BC1A /* Colors */,
+			);
+			path = ProjectDesign;
+			sourceTree = "<group>";
+		};
+		04DF7BAF2AB0428A0080BC1A /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7BB02AB042A00080BC1A /* Colors.xcassets */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		04DF7BB32AB052A00080BC1A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7BB42AB052B70080BC1A /* UIView+Extension.swift */,
+				04DF7BB92AB0530F0080BC1A /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04DF7BB62AB052E30080BC1A /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7BB72AB052F20080BC1A /* Colors.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		04DF7BBB2AB0534C0080BC1A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				04DF7BBD2AB053740080BC1A /* CommonHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		89E3D2DEE447DF1902CD8309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6903F6C69DC34549D9FE60BA /* Pods_FlashChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F22AD596808D0FDA54490239 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EE4F144C2A37C143CDCFC3F /* Pods-FlashChat.debug.xcconfig */,
+				AFEBA4EC8A0D66DC8C3F1B12 /* Pods-FlashChat.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DF7BA72AB03C650080BC1A /* Build configuration list for PBXNativeTarget "FlashChat" */;
 			buildPhases = (
+				CC3FF697C8EC1129CD90FDCA /* [CP] Check Pods Manifest.lock */,
 				04DF7B8F2AB03C620080BC1A /* Sources */,
 				04DF7B902AB03C620080BC1A /* Frameworks */,
 				04DF7B912AB03C620080BC1A /* Resources */,
+				703006A21908C9569703D1D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DF7BA32AB03C650080BC1A /* LaunchScreen.storyboard in Resources */,
+				04DF7BB12AB042A00080BC1A /* Colors.xcassets in Resources */,
+				044284FE2AB19BBF0048C34A /* GoogleService-Info.plist in Resources */,
 				04DF7BA02AB03C640080BC1A /* Assets.xcassets in Resources */,
 				04DF7B9E2AB03C620080BC1A /* Main.storyboard in Resources */,
 			);
@@ -133,14 +271,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		703006A21908C9569703D1D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashChat/Pods-FlashChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashChat/Pods-FlashChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlashChat/Pods-FlashChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC3FF697C8EC1129CD90FDCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04DF7B8F2AB03C620080BC1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DF7B9B2AB03C620080BC1A /* ViewController.swift in Sources */,
+				04DF7BC22AB062B60080BC1A /* ConversationVC.swift in Sources */,
+				04DF7BBA2AB0530F0080BC1A /* UIViewController+Extension.swift in Sources */,
+				0420074F2AB1BB0000C9F983 /* DatabaseManager.swift in Sources */,
+				04DF7BC02AB05B6D0080BC1A /* RegisterVC.swift in Sources */,
+				04DF7B9B2AB03C620080BC1A /* LoginVC.swift in Sources */,
+				04DF7BB82AB052F20080BC1A /* Colors.swift in Sources */,
 				04DF7B972AB03C620080BC1A /* AppDelegate.swift in Sources */,
+				04DF7BB52AB052B70080BC1A /* UIView+Extension.swift in Sources */,
 				04DF7B992AB03C620080BC1A /* SceneDelegate.swift in Sources */,
+				041A30C02AB210D1008820AB /* ProfileVC.swift in Sources */,
+				04DF7BBE2AB053740080BC1A /* CommonHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +470,7 @@
 		};
 		04DF7BA82AB03C650080BC1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EE4F144C2A37C143CDCFC3F /* Pods-FlashChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,8 +481,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +498,7 @@
 		};
 		04DF7BA92AB03C650080BC1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFEBA4EC8A0D66DC8C3F1B12 /* Pods-FlashChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -319,8 +509,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
