@@ -8,6 +8,7 @@
 import UIKit
 import CLTypingLabel
 import FirebaseAuth
+import JGProgressHUD
 
 class LoginVC: UIViewController {
     
@@ -20,6 +21,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     
+    private let spinner = JGProgressHUD(style: .dark)
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -29,15 +31,22 @@ class LoginVC: UIViewController {
         if isValidLogin() {
             if let email = emailTxtField.text, let password = passwordTxtField.text{
                 
-                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                spinner.show(in: view)
+                Auth.auth().signIn(withEmail
+                                   : email, password: password) { [weak self] authResult, error in
                     guard let strongSelf = self else{
                         return
                     }
+                    DispatchQueue.main.async {
+                        strongSelf.spinner.dismiss()
+                    }
                     guard authResult != nil, error == nil else {
-                        print("Error creating user")
+                        displayMessage(message: "Please enter correct Password!", messageError: true)
                         return
                     }
-//                    displayMessage(message: "login success", messageError: false)
+                    UserDefaults.standard.set(email, forKey: "email")
+                    displayMessage(message: "login success", messageError: false)
+                    
                     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyBoard.instantiateViewController(withIdentifier: "ConversationVC")
                     strongSelf.navigationController?.pushViewController(vc, animated: true)
@@ -54,6 +63,8 @@ class LoginVC: UIViewController {
 extension LoginVC{
     func initUI(){
         hideNavigation()
+        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isTranslucent = true
         appTitle.text = "⚡️FlashChat"
         appTitle.charInterval = 1
         emailView.addRadius(radius: 7)

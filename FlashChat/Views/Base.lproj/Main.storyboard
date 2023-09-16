@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YG-Gf-PB2" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="40" y="147" width="348" height="57.333333333333343"/>
+                                <rect key="frame" x="40" y="147" width="348" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="48"/>
                                 <color key="textColor" name="2AC7FE"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AdJ-Fm-F3E">
-                                <rect key="frame" x="23.666666666666657" y="284.33333333333331" width="380.66666666666674" height="117"/>
+                                <rect key="frame" x="23.666666666666657" y="227" width="380.66666666666674" height="117"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhD-DA-MOZ">
                                         <rect key="frame" x="0.0" y="0.0" width="380.66666666666669" height="48.333333333333336"/>
@@ -41,7 +41,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email or Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QtM-Yb-pSF">
                                                         <rect key="frame" x="26.333333333333343" y="12.000000000000002" width="332.33333333333326" height="18.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go" textContentType="name"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -55,21 +55,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je1-r3-i0a">
-                                        <rect key="frame" x="0.0" y="68.333333333333371" width="380.66666666666669" height="48.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="68.333333333333314" width="380.66666666666669" height="48.666666666666657"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fuT-Gq-Tsg">
                                                 <rect key="frame" x="17" y="3" width="358.66666666666669" height="42.666666666666664"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bzf-md-iZZ">
-                                                        <rect key="frame" x="0.0" y="14.333333333333314" width="14.333333333333334" height="14"/>
+                                                        <rect key="frame" x="0.0" y="14.333333333333371" width="14.333333333333334" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Bzf-md-iZZ" secondAttribute="height" multiplier="1:1" id="BbP-WM-SZn"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2C-s0-e1s">
-                                                        <rect key="frame" x="26.333333333333343" y="12.000000000000002" width="332.33333333333326" height="18.666666666666671"/>
+                                                        <rect key="frame" x="26.333333333333343" y="12.666666666666686" width="332.33333333333326" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -85,7 +85,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfF-gW-ot8">
-                                <rect key="frame" x="156.66666666666666" y="451.33333333333331" width="114.99999999999997" height="29"/>
+                                <rect key="frame" x="156.66666666666666" y="394" width="114.99999999999997" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Forget Password?">
@@ -93,7 +93,7 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TcX-dG-hwU">
-                                <rect key="frame" x="23.666666666666657" y="530.33333333333337" width="380.66666666666674" height="122"/>
+                                <rect key="frame" x="23.666666666666657" y="473" width="380.66666666666674" height="122"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHJ-aI-T3f">
                                         <rect key="frame" x="0.0" y="0.0" width="380.66666666666669" height="51"/>
@@ -163,13 +163,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKZ-LX-o6H" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="40" y="97" width="348" height="57.333333333333343"/>
+                                <rect key="frame" x="30" y="97" width="368" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="48"/>
                                 <color key="textColor" name="2AC7FE"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lEV-2Q-dFy">
-                                <rect key="frame" x="23.666666666666657" y="339.66666666666663" width="380.66666666666674" height="335.66666666666663"/>
+                                <rect key="frame" x="23.666666666666657" y="260.66666666666663" width="380.66666666666674" height="335.66666666666663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofn-nW-tEA">
                                         <rect key="frame" x="0.0" y="0.0" width="380.66666666666669" height="51.333333333333336"/>
@@ -178,7 +178,7 @@
                                                 <rect key="frame" x="17" y="3" width="358.66666666666669" height="45.333333333333336"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="MUD-4E-1GD">
-                                                        <rect key="frame" x="0.0" y="15.666666666666629" width="14.333333333333334" height="14.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="15.666666666666629" width="14.333333333333334" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="MUD-4E-1GD" secondAttribute="height" multiplier="1:1" id="PTk-Ia-DjJ"/>
                                                         </constraints>
@@ -186,7 +186,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bvg-vw-Ove">
                                                         <rect key="frame" x="26.333333333333343" y="13.333333333333316" width="332.33333333333326" height="18.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -214,7 +214,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mmJ-IC-vp7">
                                                         <rect key="frame" x="26.333333333333343" y="13.000000000000002" width="334.33333333333326" height="18.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -228,10 +228,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnX-7a-slP">
-                                        <rect key="frame" x="0.0" y="142.33333333333331" width="380.66666666666669" height="51.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="142.33333333333331" width="380.66666666666669" height="51"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xiQ-ni-6qF">
-                                                <rect key="frame" x="17" y="3" width="360.66666666666669" height="45.333333333333336"/>
+                                                <rect key="frame" x="17" y="3" width="360.66666666666669" height="45"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="n7F-j6-3ff">
                                                         <rect key="frame" x="0.0" y="13" width="14.333333333333334" height="19"/>
@@ -239,7 +239,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6MH-gf-MyZ">
                                                         <rect key="frame" x="26.333333333333343" y="13.333333333333316" width="334.33333333333326" height="18.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="go" textContentType="tel"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -253,21 +253,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qor-B7-rBy">
-                                        <rect key="frame" x="0.0" y="213.66666666666669" width="380.66666666666669" height="51"/>
+                                        <rect key="frame" x="0.0" y="213.33333333333331" width="380.66666666666669" height="51.333333333333314"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="KD0-gw-An0">
-                                                <rect key="frame" x="17" y="3" width="360.66666666666669" height="45"/>
+                                                <rect key="frame" x="17" y="3" width="360.66666666666669" height="45.333333333333336"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ky3-b7-wqo">
-                                                        <rect key="frame" x="0.0" y="15.333333333333258" width="14.333333333333334" height="14.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="15.666666666666686" width="14.333333333333334" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Ky3-b7-wqo" secondAttribute="height" multiplier="1:1" id="3zH-nS-ME9"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iSg-Fs-ofx">
-                                                        <rect key="frame" x="26.333333333333343" y="13.000000000000002" width="334.33333333333326" height="18.666666666666671"/>
+                                                        <rect key="frame" x="26.333333333333343" y="14.333333333333314" width="334.33333333333326" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -293,9 +293,9 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re type password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mzI-d5-vRl">
-                                                        <rect key="frame" x="26.333333333333343" y="13.333333333333259" width="334.33333333333326" height="18.666666666666671"/>
+                                                        <rect key="frame" x="26.333333333333343" y="14" width="334.33333333333326" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -311,7 +311,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="sYY-4S-I5i">
-                                <rect key="frame" x="105.00000000000001" y="705.33333333333337" width="218.33333333333337" height="29"/>
+                                <rect key="frame" x="105.00000000000001" y="626.33333333333337" width="218.33333333333337" height="29"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyT-XC-ngB">
                                         <rect key="frame" x="0.0" y="0.0" width="21.333333333333332" height="29"/>
@@ -338,7 +338,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJW-xe-8aG">
-                                <rect key="frame" x="23.666666666666657" y="765.33333333333337" width="380.66666666666674" height="51.333333333333371"/>
+                                <rect key="frame" x="23.666666666666657" y="686.33333333333337" width="380.66666666666674" height="51"/>
                                 <color key="backgroundColor" name="#0079FB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Register">
@@ -349,16 +349,19 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LRS-ne-Otm">
-                                <rect key="frame" x="115.33333333333333" y="184.33333333333334" width="197.33333333333337" height="120.33333333333334"/>
+                                <rect key="frame" x="154.66666666666666" y="117" width="118.66666666666666" height="118.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LRS-ne-Otm" secondAttribute="height" multiplier="1:1" id="HQO-IB-y4U"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4nh-Pu-bpJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lEV-2Q-dFy" firstAttribute="top" secondItem="LRS-ne-Otm" secondAttribute="bottom" constant="35" id="0rQ-Vg-a8T"/>
-                            <constraint firstItem="KKZ-LX-o6H" firstAttribute="leading" secondItem="4nh-Pu-bpJ" secondAttribute="leading" constant="40" id="1l2-Hm-rMZ"/>
+                            <constraint firstItem="lEV-2Q-dFy" firstAttribute="top" secondItem="LRS-ne-Otm" secondAttribute="bottom" constant="25" id="0rQ-Vg-a8T"/>
+                            <constraint firstItem="KKZ-LX-o6H" firstAttribute="leading" secondItem="4nh-Pu-bpJ" secondAttribute="leading" constant="30" id="1l2-Hm-rMZ"/>
                             <constraint firstItem="KKZ-LX-o6H" firstAttribute="centerX" secondItem="62t-il-WZJ" secondAttribute="centerX" id="3YH-QK-9l3"/>
-                            <constraint firstItem="LRS-ne-Otm" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.460748" id="9ka-Es-ulI"/>
+                            <constraint firstItem="LRS-ne-Otm" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.27748" id="9ka-Es-ulI"/>
                             <constraint firstItem="pJW-xe-8aG" firstAttribute="top" secondItem="sYY-4S-I5i" secondAttribute="bottom" constant="31" id="A2p-d0-oev"/>
                             <constraint firstItem="sYY-4S-I5i" firstAttribute="top" secondItem="lEV-2Q-dFy" secondAttribute="bottom" constant="30" id="IAI-ct-GBj"/>
                             <constraint firstItem="pJW-xe-8aG" firstAttribute="centerX" secondItem="62t-il-WZJ" secondAttribute="centerX" id="ISe-N6-G7J"/>
@@ -366,9 +369,8 @@
                             <constraint firstItem="dzb-p1-ZqQ" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.0333333" id="NAz-j9-IZb"/>
                             <constraint firstItem="pJW-xe-8aG" firstAttribute="height" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.119444" id="UcO-hf-qQ8"/>
                             <constraint firstItem="KKZ-LX-o6H" firstAttribute="top" secondItem="4nh-Pu-bpJ" secondAttribute="top" constant="50" id="Wta-HG-Xbf"/>
-                            <constraint firstItem="LRS-ne-Otm" firstAttribute="height" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.281479" id="YXG-Hn-ds2"/>
                             <constraint firstItem="Ky3-b7-wqo" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.0333333" id="bPH-uk-vpn"/>
-                            <constraint firstItem="LRS-ne-Otm" firstAttribute="top" secondItem="KKZ-LX-o6H" secondAttribute="bottom" constant="30" id="dz6-nA-4Un"/>
+                            <constraint firstItem="LRS-ne-Otm" firstAttribute="top" secondItem="KKZ-LX-o6H" secondAttribute="bottom" constant="20" id="dz6-nA-4Un"/>
                             <constraint firstItem="n7F-j6-3ff" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.0333333" id="fuM-fz-nEg"/>
                             <constraint firstItem="Ee9-PZ-xuX" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.0333333" id="gDy-x0-VaO"/>
                             <constraint firstItem="pJW-xe-8aG" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.888889" id="iOG-rp-C6f"/>
@@ -439,21 +441,8 @@
                     <view key="view" contentMode="scaleToFill" id="9rv-nt-KV4">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_sel" translatesAutoresizingMaskIntoConstraints="NO" id="CeF-Jr-wMN">
-                                <rect key="frame" x="94" y="377" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="bLG-Em-4ng"/>
-                                    <constraint firstAttribute="height" constant="128" id="m2X-nZ-ycn"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="25A-Tp-PVb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="CeF-Jr-wMN" firstAttribute="top" secondItem="25A-Tp-PVb" secondAttribute="top" constant="234" id="6CJ-0e-zMg"/>
-                            <constraint firstItem="CeF-Jr-wMN" firstAttribute="centerX" secondItem="9rv-nt-KV4" secondAttribute="centerX" id="evR-fi-M3L"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chats" id="M1z-pX-VS7"/>
                 </viewController>
@@ -520,15 +509,10 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="8YG-Gf-PB2">
-            <size key="intrinsicContentSize" width="295.33333333333331" height="57.333333333333336"/>
-        </designable>
-        <designable name="KKZ-LX-o6H">
-            <size key="intrinsicContentSize" width="295.33333333333331" height="57.333333333333336"/>
-        </designable>
+        <designable name="8YG-Gf-PB2"/>
+        <designable name="KKZ-LX-o6H"/>
     </designables>
     <resources>
-        <image name="check_sel" width="21.333333969116211" height="21.333333969116211"/>
         <image name="check_unsel_sel" width="21.333333969116211" height="21.333333969116211"/>
         <image name="mail_icon" width="16.333333969116211" height="13"/>
         <image name="mobile_icon" width="16" height="22.666666030883789"/>

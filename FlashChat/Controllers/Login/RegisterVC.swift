@@ -8,6 +8,7 @@
 import UIKit
 import CLTypingLabel
 import FirebaseAuth
+import JGProgressHUD
 
 
 class RegisterVC: UIViewController {
@@ -25,6 +26,7 @@ class RegisterVC: UIViewController {
     
     //MARK: - Variables
     var isChecked: Bool = false
+    private let spinner = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +43,16 @@ class RegisterVC: UIViewController {
             
             //Firebase register
             if let email = emailTxtField.text, let password = passTxtField.text, let name = nameTxtField.text, let mobile = mobileTxtField.text {
+                
+                spinner.show(in: view)
                 //if registerd user already exists or not
-                DatabaseManager.shared.userExists(with: email) { exists in
+                DatabaseManager.shared.userExists(with: email) { [weak self] exists in
+                    guard let strongSelf = self else{
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        strongSelf.spinner.dismiss()
+                    }
                     guard !exists else{
                         //user already exists
                         displayMessage(message: "User already exists!", messageError: true)
@@ -59,9 +69,28 @@ class RegisterVC: UIViewController {
                             return
                         }
                         
-                        DatabaseManager.shared.insertUser(with: ChatAppUser(name: name,
-                                                                            email: email,
-                                                                            mobile: mobile))
+                        let chatUser = ChatAppUser(name: name,
+                                                   email: email,
+                                                   mobile: mobile)
+                        DatabaseManager.shared.insertUser( with: chatUser, completion: { success in
+                            if success {
+                                //Upload image
+                                guard let image = strongSelf.userProfileImg.image, let data = image.pngData() else {
+                                    return
+                                }
+                                let fileNmae = chatUser.profilePictureFileName
+                                StorageManager.shared.uploadProfilePicture(with: data, fileName: fileNmae, completion: {result in
+                                    switch result {
+                                    case .success(let downloadUrl):
+                                        UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                        print(downloadUrl)
+                                    case .failure(let error):
+                                        print("Storage manger error\(error)")
+                                    }
+                                })
+                            }
+                        })
+                        
                         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyBoard.instantiateViewController(withIdentifier: "ConversationVC")
                         strongSelf.navigationController?.pushViewController(vc, animated: true)
@@ -85,13 +114,12 @@ extension RegisterVC{
         userProfileImg.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfilePic))
         userProfileImg.addGestureRecognizer(gesture)
-        //        To make the profile photo circular
-        //        userProfileImg.image = UIImage(systemName: "person")
-        //        userProfileImg.tintColor = .gray
-        //        userProfileImg.contentMode = .scaleAspectFit
-        //        userProfileImg.layer.masksToBounds = true
-        //        userProfileImg.layer.cornerRadius = self.userProfileImg.frame.size.width / 2.0
-        //        userProfileImg.addBorder(color:.C0079FB, width: 2)
+//                To make the profile photo circular
+                userProfileImg.image = UIImage(systemName: "person.circle")
+                userProfileImg.tintColor = .gray
+                userProfileImg.contentMode = .scaleAspectFit
+                userProfileImg.layer.masksToBounds = true
+        userProfileImg.layer.cornerRadius = self.userProfileImg.frame.size.width / 2
     }
     @objc private func didTapChangeProfilePic(){
         presentPhotoActionSheet()
