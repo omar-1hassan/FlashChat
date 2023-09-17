@@ -9,6 +9,8 @@ import JGProgressHUD
 
 class NewConversationVC: UIViewController {
     
+    public var completion: (([String: String]) -> (Void))?
+    
     private let spinner = JGProgressHUD(style: .dark)
     
     private var users = [[String: String]]()
@@ -42,11 +44,11 @@ class NewConversationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(noResultLabel)
-        view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        view.addSubview(noResultLabel)
+        view.addSubview(tableView)
         view.backgroundColor = .white
         navigationController?.navigationBar.topItem?.titleView = searchBar
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel",
@@ -57,19 +59,26 @@ class NewConversationVC: UIViewController {
         searchBar.becomeFirstResponder()
         
     }
+    @objc private func dismissSelf(){
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
         noResultLabel.frame = CGRect(x: view.frame.size.width/4, y: (view.frame.size.height-200)/2, width: view.frame.size.width/2, height: 200)
     }
-    @objc private func dismissSelf(){
-        dismiss(animated: true, completion: nil)
-    }
+
 }
 extension NewConversationVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //start conversation
+        let targetUserData = results[indexPath.row]
+        
+        dismiss(animated: true, completion: { [weak self] in
+            self?.completion?(targetUserData)
+
+        })
     }
     
 }
@@ -89,13 +98,13 @@ extension NewConversationVC: UITableViewDataSource{
 
 extension NewConversationVC: UISearchBarDelegate{
     //Gets called when the user taps on the search button on the keyboard
-    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //we want to grap the text from the search bar th search for this user name
         guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
             return
         }
         
-        searchBar.resignFirstResponder()
+//        searchBar.resignFirstResponder()
         
         results.removeAll()
         spinner.show(in: view)

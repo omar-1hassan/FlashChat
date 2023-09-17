@@ -18,7 +18,6 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        profileTV.tableHeaderView = createTableHeader()
     }
     
     func createTableHeader() -> UIView? {
@@ -26,12 +25,13 @@ class ProfileVC: UIViewController {
             return nil
         }
         let safeEmail = DatabaseManager.safeEmail(emailAdress: email)
-        let fileName = safeEmail+"_profile_picture.png"
+        let fileName = safeEmail + "_profile_picture.png"
         let path = "images/"+fileName
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 300))
         headerView.backgroundColor = .link
-        let imageView = UIImageView(frame: CGRect(x: (view.frame.size.width-150)/2, y: 75, width: 150, height: 150))
+        
+        let imageView = UIImageView(frame: CGRect(x: (headerView.self.frame.size.width-150)/2, y: 75, width: 150, height: 150))
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .white
         imageView.layer.borderColor = UIColor.white.cgColor
@@ -39,8 +39,9 @@ class ProfileVC: UIViewController {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = imageView.self.frame.size.width/2
         headerView.addSubview(imageView)
-        StorageManager.shared.downloadURL(for: path, completion: { [weak self] retsult in
-            switch retsult {
+
+        StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in
+            switch result {
             case .success(let url):
                 self?.downloadImage(imageView: imageView, url: url)
             case .failure(let error):
@@ -48,6 +49,7 @@ class ProfileVC: UIViewController {
             }
         })
         
+        print("profile picture downloaded successfuly")
         return headerView
     }
     
@@ -67,10 +69,13 @@ class ProfileVC: UIViewController {
 
 extension ProfileVC{
     func initUI(){
-        profileTV.delegate = self
-        profileTV.dataSource = self
         profileTV.register(UITableViewCell.self,
                            forCellReuseIdentifier: "cell")
+        profileTV.delegate = self
+        profileTV.dataSource = self
+        profileTV.tableHeaderView = createTableHeader()
+
+
     }
 }
 

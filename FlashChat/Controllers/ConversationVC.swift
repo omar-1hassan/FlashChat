@@ -76,9 +76,18 @@ extension ConversationVC{
     }
     @objc private func didTapComposeButton(){
         let vc = NewConversationVC()
+        vc.completion = { [weak self] result in
+            print("\(result)")
+            self?.createNewConversation(result: result)
+        }
         let navVC = UINavigationController(rootViewController: vc)
-        navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)
+    }
+    private func createNewConversation(result: [String: String]) {
+        let vc = ChatsVC()
+        vc.title = "Omar mohamed"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

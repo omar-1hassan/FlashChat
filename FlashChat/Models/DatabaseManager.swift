@@ -38,11 +38,10 @@ extension DatabaseManager{
         })
     }
     //insert new user to database
-    public func insertUser(with user: ChatAppUser, completion: @escaping (Bool) -> Void){
-        database.child(user.safeEmail).setValue([
-            "name": user.name,
-            "mobile": user.mobile
-            
+    public func insertUser(with users: ChatAppUser, completion: @escaping (Bool) -> Void){
+        database.child(users.safeEmail).setValue([
+            "first_name": users.firstName,
+            "last_name": users.lastName
         ], withCompletionBlock: { error, _ in
             guard error == nil else{
                 print("Fialed to write to data base")
@@ -74,15 +73,15 @@ extension DatabaseManager{
                     //Append to users dictionary
                     let newElemnt =
                     [
-                        "name": user.name ,
-                        "email": user.safeEmail
+                        "name": users.firstName + " " + users.lastName ,
+                        "email": users.safeEmail
                     ]
                     
                     usersCollection.append(newElemnt)
                     
                     self.database.child("users").setValue(usersCollection, withCompletionBlock: { error, _ in
                         guard error == nil else {
-                            completion(true)
+                            completion(false)
                             return
                         }
                         
@@ -94,8 +93,8 @@ extension DatabaseManager{
                     //Create that array
                     let newCollection: [[String: String]] = [
                         [
-                            "name": user.name ,
-                            "email": user.safeEmail
+                            "name": users.firstName + " " + users.lastName ,
+                            "email": users.safeEmail
                         ]
                     ]
                     
@@ -128,9 +127,9 @@ public enum DataBaseErrors: Error{
 }
 
     struct ChatAppUser{
-    let name: String
+    let firstName: String
     let email: String
-    let mobile: String
+    let lastName: String
     var safeEmail: String {
         var safeEmail = email.replacingOccurrences(of: ".", with: "-")
         safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")

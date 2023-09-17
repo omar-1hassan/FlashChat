@@ -16,9 +16,9 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var appTitle: CLTypingLabel!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var checkBoxBtn: UIButton!
-    @IBOutlet weak var nameTxtField: UITextField!
+    @IBOutlet weak var firstNameTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
-    @IBOutlet weak var mobileTxtField: UITextField!
+    @IBOutlet weak var secondNameTxtField: UITextField!
     @IBOutlet weak var passTxtField: UITextField!
     @IBOutlet weak var rePassTxtField: UITextField!
     @IBOutlet var viiew: [UIView]!
@@ -42,7 +42,7 @@ class RegisterVC: UIViewController {
         if isValidRegister(){
             
             //Firebase register
-            if let email = emailTxtField.text, let password = passTxtField.text, let name = nameTxtField.text, let mobile = mobileTxtField.text {
+            if let email = emailTxtField.text, let password = passTxtField.text, let firstName = firstNameTxtField.text, let lastName = secondNameTxtField.text {
                 
                 spinner.show(in: view)
                 //if registerd user already exists or not
@@ -69,9 +69,9 @@ class RegisterVC: UIViewController {
                             return
                         }
                         
-                        let chatUser = ChatAppUser(name: name,
+                        let chatUser = ChatAppUser(firstName: firstName,
                                                    email: email,
-                                                   mobile: mobile)
+                                                   lastName: lastName)
                         DatabaseManager.shared.insertUser( with: chatUser, completion: { success in
                             if success {
                                 //Upload image
@@ -136,11 +136,11 @@ extension RegisterVC{
     }
     //Validation on our register text fields
     func isValidRegister()->Bool{
-        if nameTxtField.text?.trimmingCharacters(in: .whitespaces) == "" {
+        if firstNameTxtField.text?.trimmingCharacters(in: .whitespaces) == "" {
             displayMessage(message: "Please Enter Your Name", messageError: true)
             return false
         }
-        if !isValidName(nameTxtField.text?.trimmingCharacters(in: .whitespaces) ?? ""){
+        if !isValidName(firstNameTxtField.text?.trimmingCharacters(in: .whitespaces) ?? ""){
             displayMessage(message: "Please Enter A Valid Name", messageError: true)
             return false
         }
@@ -152,12 +152,12 @@ extension RegisterVC{
             displayMessage(message: "Please Enter A Valid Email", messageError: true)
             return false
         }
-        if mobileTxtField.text?.trimmingCharacters(in: .whitespaces) == "" {
+        if secondNameTxtField.text?.trimmingCharacters(in: .whitespaces) == "" {
             displayMessage(message: "Please Enter Your Mobile Number", messageError: true)
             return false
         }
-        if !isValidMobileNumber(mobileTxtField.text?.trimmingCharacters(in: .whitespaces) ?? ""){
-            displayMessage(message: "Please Enter A Valid Mobile Number", messageError: true)
+        if !isValidName(secondNameTxtField.text?.trimmingCharacters(in: .whitespaces) ?? ""){
+            displayMessage(message: "Please Enter A Valid Name", messageError: true)
             return false
         }
         if passTxtField.text?.trimmingCharacters(in: .whitespaces) == "" {
