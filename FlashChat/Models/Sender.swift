@@ -9,8 +9,7 @@ import UIKit
 import MessageKit
 
 struct Sender: SenderType{
-    let photoURL: String
-    //Those attributes is provided by the MessageKit pod
-    var senderId: String
-    var displayName: String
+    public var photoURL: String
+    public var senderId: String
+    public var displayName: String
 }
