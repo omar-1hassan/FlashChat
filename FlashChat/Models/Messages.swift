@@ -21,7 +21,6 @@ struct Message: MessageType{
 extension MessageKind {
     var messageKindString: String {
         switch self{
-            
         case .text(_):
             return "text"
         case .attributedText(_):

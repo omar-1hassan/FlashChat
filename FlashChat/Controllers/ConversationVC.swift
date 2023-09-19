@@ -109,12 +109,10 @@ extension ConversationVC{
         let navVC = UINavigationController(rootViewController: vc)
         present(navVC, animated: true)
     }
-    private func createNewConversation(result: [String: String]) {
+    private func createNewConversation(result: SearchResult) {
         
-        guard let name = result["name"],
-              let email = result["email"] else {
-            return
-        }
+        let name = result.name
+        let email = result.email
         let vc = ChatsVC(with: email, id: nil)
         vc.isNewConversation = true
         vc.title = name
@@ -135,7 +133,7 @@ extension ConversationVC: UITableViewDelegate{
         navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 90
     }
     
 }

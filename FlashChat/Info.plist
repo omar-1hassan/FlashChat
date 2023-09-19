@@ -24,8 +24,10 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Please allow access to take a profile picture</string>
+	<string>Please allow access to take a profile picture.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow access to select photo for your profile</string>
+	<string>Please allow access to select photo for your profile.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Please allow to access to send audio and video messages.</string>
 </dict>
 </plist>
