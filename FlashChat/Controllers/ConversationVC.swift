@@ -226,6 +226,5 @@ extension ConversationVC: UITableViewDelegate, UITableViewDataSource{
             })
             tableView.endUpdates()
         }
-        
     }
 }

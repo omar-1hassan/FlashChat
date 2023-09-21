@@ -43,7 +43,6 @@ class ConversationTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -65,7 +64,6 @@ class ConversationTableViewCell: UITableViewCell {
         //(contentView.highht-20)/2
         
     }
-    
     public func configure(with model: Conversation) {
         userMessageLabel.text = model.latesMessage.text
         userNameLabel.text = model.name

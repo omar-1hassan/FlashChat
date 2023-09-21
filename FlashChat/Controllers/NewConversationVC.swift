@@ -10,15 +10,10 @@ import JGProgressHUD
 class NewConversationVC: UIViewController {
     
     public var completion: ((SearchResult) -> (Void))?
-    
     private let spinner = JGProgressHUD(style: .dark)
-    
     private var users = [[String: String]]()
     private var results = [SearchResult]()
-    
-    
     private var hasFetched = false
-    
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search for users....."

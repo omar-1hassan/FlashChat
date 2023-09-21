@@ -50,7 +50,6 @@ class ProfileVC: UIViewController {
                 print("Failed to get download url: \(error)")
             }
         })
-        
         print("profile picture downloaded successfuly")
         return headerView
     }
@@ -111,8 +110,6 @@ extension ProfileVC{
         profileTV.delegate = self
         profileTV.dataSource = self
         profileTV.tableHeaderView = createTableHeader()
-        
-        
     }
 }
 

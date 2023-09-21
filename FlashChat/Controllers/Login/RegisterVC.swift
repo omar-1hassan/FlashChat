@@ -246,7 +246,6 @@ extension RegisterVC: UIImagePickerControllerDelegate, UINavigationControllerDel
         }
         userProfileImg.image = selectedImage
     }
-    
     //gets called when the user cancel taking a picture or photo selection
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

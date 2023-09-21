@@ -47,7 +47,6 @@ class ChatsVC: MessagesViewController {
         
     }
     
-    
     init(with email: String, id: String?) {
         otherUserEmail = email
         conversationId = id

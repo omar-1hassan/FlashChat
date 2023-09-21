@@ -48,10 +48,7 @@ class NewConversationCell: UITableViewCell {
                                      y: 20,
                                      width: contentView.widtth - 20 - userImageView.widtth,
                                      height: 50)
-        
-
     }
-    
     public func configure(with model: SearchResult) {
         userNameLabel.text = model.name
         
