@@ -79,8 +79,8 @@ class LoginVC: UIViewController {
 extension LoginVC{
     func initUI(){
         hideNavigation()
-        self.tabBarController?.tabBar.isHidden = true
-        self.tabBarController?.tabBar.isTranslucent = true
+        tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isTranslucent = true
         appTitle.text = "⚡️FlashChat"
         appTitle.charInterval = 1
         emailView.addRadius(radius: 7)

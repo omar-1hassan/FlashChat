@@ -30,7 +30,7 @@ extension MessageKind {
         case .video(_):
             return "video"
         case .location(_):
-            return"video"
+            return"location"
         case .emoji(_):
             return "emoji"
         case .audio(_):

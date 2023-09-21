@@ -33,6 +33,11 @@ class RegisterVC: UIViewController {
         initUI()
     }
     
+    @IBAction func backBtnClicked(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     @IBAction func checkBoxBtnClicked(_ sender: UIButton) {
         isChecked.toggle()
         changeCheckBoxImg(view: sender, on: .init(named: "check_sel")!, off: .init(named: "check_unsel_sel")!, onOffStatus: isChecked)
@@ -63,6 +68,10 @@ class RegisterVC: UIViewController {
                         guard let strongSelf = self else{
                             return
                         }
+                        
+                        //so if the user decided to signOut we will remove it's data from cache so if he wants to register with onother email and open the other account he will not found his first account info
+                        UserDefaults.standard.setValue(email, forKey: "email")
+                        UserDefaults.standard.setValue("\(firstName) \(lastName)", forKey: "name")
                         
                         guard authResult != nil, error == nil else {
                             print("Error creating user")
@@ -235,7 +244,7 @@ extension RegisterVC: UIImagePickerControllerDelegate, UINavigationControllerDel
         guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
             return
         }
-        self.userProfileImg.image = selectedImage
+        userProfileImg.image = selectedImage
     }
     
     //gets called when the user cancel taking a picture or photo selection

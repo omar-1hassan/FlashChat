@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import SDWebImage
 
 class ProfileVC: UIViewController {
     
@@ -14,7 +15,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var profileTV: UITableView!
     
     //MARK: - Variables
-    var data = ["Log Out"]
+    var data = [ProfileViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -39,11 +41,11 @@ class ProfileVC: UIViewController {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = imageView.self.frame.size.width/2
         headerView.addSubview(imageView)
-
-        StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in
+        
+        StorageManager.shared.downloadURL(for: path, completion: { result in
             switch result {
             case .success(let url):
-                self?.downloadImage(imageView: imageView, url: url)
+                imageView.sd_setImage(with: url, completed: nil)
             case .failure(let error):
                 print("Failed to get download url: \(error)")
             }
@@ -52,62 +54,72 @@ class ProfileVC: UIViewController {
         print("profile picture downloaded successfuly")
         return headerView
     }
-    
-    func downloadImage(imageView: UIImageView , url: URL){
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
-            guard let data = data, error == nil else {
-                return
-            }
-            DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                imageView.image = image
-                
-            }
-        }).resume()
-    }
 }
 
 extension ProfileVC{
     func initUI(){
-        profileTV.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "cell")
+        
+        data.append(ProfileViewModel(viewModelType: .info,
+                                     title: "Name: \(UserDefaults.standard.value(forKey: "name") as? String ?? "No Name")",
+                                     handler: nil))
+        
+        data.append(ProfileViewModel(viewModelType: .info,
+                                     title: "Email: \(UserDefaults.standard.value(forKey: "email") as? String ?? "No email")",
+                                     handler: nil))
+        
+        data.append(ProfileViewModel(viewModelType: .logout,
+                                     title: "Log Out",
+                                     handler: { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            let actionSheet = UIAlertController(title: "",
+                                                message: "",
+                                                preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Log Out",
+                                                style: .destructive,
+                                                handler: { [weak self] _ in
+                guard let strongSelf = self else {
+                    return
+                }
+                //so if the user decided to signOut we will remove it's data from cache so if he wants to register with onother email and open the other account he will not found his first account info
+                UserDefaults.standard.setValue(nil, forKey: "email")
+                UserDefaults.standard.setValue(nil, forKey: "name")
+                do{
+                    try FirebaseAuth.Auth.auth().signOut()
+                    
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyBoard.instantiateViewController(withIdentifier: "LoginVC")
+                    strongSelf.navigationController?.pushViewController(vc, animated: true)
+                }
+                catch{
+                    print("field log out")
+                }
+                
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                                style: .cancel,
+                                                handler: nil))
+            strongSelf.present(actionSheet, animated: true)
+            
+        }))
+        
+        
+        profileTV.register(ProfileTableViewCell.self,
+                           forCellReuseIdentifier: ProfileTableViewCell.identifier)
         profileTV.delegate = self
         profileTV.dataSource = self
         profileTV.tableHeaderView = createTableHeader()
-
-
+        
+        
     }
 }
 
 extension ProfileVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let actionSheet = UIAlertController(title: "",
-                                            message: "",
-                                            preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Log Out",
-                                            style: .destructive,
-                                            handler: { [weak self] _ in
-            guard let strongSelf = self else {
-                return
-            }
-            do{
-                try FirebaseAuth.Auth.auth().signOut()
-                
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "LoginVC")
-                strongSelf.navigationController?.pushViewController(vc, animated: true)
-            }
-            catch{
-                print("field log out")
-            }
-            
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel",
-                                            style: .cancel,
-                                            handler: nil))
-        present(actionSheet, animated: true)
+        data[indexPath.row].handler?()
     }
 }
 
@@ -117,10 +129,29 @@ extension ProfileVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
-        cell.textLabel?.textAlignment = .center
-        cell.textLabel?.textColor = .red
+        let viewModel = data[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
+        cell.setUp(with: viewModel)
         return cell
+    }
+}
+
+
+class ProfileTableViewCell: UITableViewCell{
+    
+    static let identifier = "ProfileTableViewCell"
+    
+    public func setUp(with viewModel: ProfileViewModel) {
+        textLabel?.text = viewModel.title
+
+        
+        switch viewModel.viewModelType{
+        case .info:
+            textLabel?.textAlignment = .left
+            selectionStyle = .none
+        case .logout:
+            textLabel?.textColor = .red
+            textLabel?.textAlignment = .center
+        }
     }
 }

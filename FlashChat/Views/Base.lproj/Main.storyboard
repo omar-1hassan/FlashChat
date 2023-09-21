@@ -46,7 +46,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="#F1EFF1"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="h0u-ua-1Cc" firstAttribute="top" secondItem="YhD-DA-MOZ" secondAttribute="top" constant="3" id="5uw-DW-KqJ"/>
                                             <constraint firstAttribute="bottom" secondItem="h0u-ua-1Cc" secondAttribute="bottom" constant="3" id="9iS-xC-vNL"/>
@@ -74,7 +74,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="#F1EFF1"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="fuT-Gq-Tsg" firstAttribute="leading" secondItem="Je1-r3-i0a" secondAttribute="leading" constant="17" id="Itg-1g-cju"/>
                                             <constraint firstItem="fuT-Gq-Tsg" firstAttribute="top" secondItem="Je1-r3-i0a" secondAttribute="top" constant="3" id="eWF-ec-8qT"/>
@@ -191,7 +191,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="#F1EFF1"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="e9H-r0-z4G" secondAttribute="trailing" constant="5" id="9KR-Qk-Pbb"/>
                                             <constraint firstAttribute="bottom" secondItem="e9H-r0-z4G" secondAttribute="bottom" constant="3" id="GZG-9k-BYM"/>
@@ -216,7 +216,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="#F1EFF1"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="xiQ-ni-6qF" firstAttribute="top" secondItem="vnX-7a-slP" secondAttribute="top" constant="3" id="Xcj-eA-Gyr"/>
                                             <constraint firstAttribute="trailing" secondItem="xiQ-ni-6qF" secondAttribute="trailing" constant="3" id="ZLf-2f-xr7"/>
@@ -244,7 +244,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="#F1EFF1"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="hJc-YQ-sKw" secondAttribute="trailing" constant="3" id="Ew1-bC-Fj5"/>
                                             <constraint firstAttribute="bottom" secondItem="hJc-YQ-sKw" secondAttribute="bottom" constant="3" id="GGh-xg-EMe"/>
@@ -272,7 +272,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="#F1EFF1"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="KD0-gw-An0" firstAttribute="top" secondItem="qor-B7-rBy" secondAttribute="top" constant="3" id="5j9-s1-fh8"/>
                                             <constraint firstAttribute="bottom" secondItem="KD0-gw-An0" secondAttribute="bottom" constant="3" id="61B-4h-ngR"/>
@@ -300,7 +300,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="#F1EFF1"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="n2f-cN-Xwe" firstAttribute="top" secondItem="Fd5-zm-RdX" secondAttribute="top" constant="3" id="Hmt-Zd-nyZ"/>
                                             <constraint firstAttribute="trailing" secondItem="n2f-cN-Xwe" secondAttribute="trailing" constant="3" id="Ngl-tv-6m5"/>
@@ -354,6 +354,14 @@
                                     <constraint firstAttribute="width" secondItem="LRS-ne-Otm" secondAttribute="height" multiplier="1:1" id="HQO-IB-y4U"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1i-V3-nVT">
+                                <rect key="frame" x="10" y="57" width="21.333333333333329" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.backward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="backBtnClicked:" destination="zaI-cD-K9b" eventType="touchUpInside" id="FBg-nB-gpl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4nh-Pu-bpJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -361,6 +369,7 @@
                             <constraint firstItem="lEV-2Q-dFy" firstAttribute="top" secondItem="LRS-ne-Otm" secondAttribute="bottom" constant="25" id="0rQ-Vg-a8T"/>
                             <constraint firstItem="KKZ-LX-o6H" firstAttribute="leading" secondItem="4nh-Pu-bpJ" secondAttribute="leading" constant="30" id="1l2-Hm-rMZ"/>
                             <constraint firstItem="KKZ-LX-o6H" firstAttribute="centerX" secondItem="62t-il-WZJ" secondAttribute="centerX" id="3YH-QK-9l3"/>
+                            <constraint firstItem="J1i-V3-nVT" firstAttribute="top" secondItem="4nh-Pu-bpJ" secondAttribute="top" constant="10" id="7cC-zr-kAT"/>
                             <constraint firstItem="LRS-ne-Otm" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.27748" id="9ka-Es-ulI"/>
                             <constraint firstItem="pJW-xe-8aG" firstAttribute="top" secondItem="sYY-4S-I5i" secondAttribute="bottom" constant="31" id="A2p-d0-oev"/>
                             <constraint firstItem="sYY-4S-I5i" firstAttribute="top" secondItem="lEV-2Q-dFy" secondAttribute="bottom" constant="30" id="IAI-ct-GBj"/>
@@ -375,6 +384,7 @@
                             <constraint firstItem="Ee9-PZ-xuX" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.0333333" id="gDy-x0-VaO"/>
                             <constraint firstItem="pJW-xe-8aG" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.888889" id="iOG-rp-C6f"/>
                             <constraint firstItem="lEV-2Q-dFy" firstAttribute="centerX" secondItem="62t-il-WZJ" secondAttribute="centerX" id="iPA-2K-HnO"/>
+                            <constraint firstItem="J1i-V3-nVT" firstAttribute="leading" secondItem="4nh-Pu-bpJ" secondAttribute="leading" constant="10" id="ip9-CM-Nrf"/>
                             <constraint firstItem="MUD-4E-1GD" firstAttribute="width" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.0333333" id="oj5-iU-KFu"/>
                             <constraint firstItem="Ofn-nW-tEA" firstAttribute="height" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.119444" id="qEA-6F-pD9"/>
                             <constraint firstItem="n7F-j6-3ff" firstAttribute="height" secondItem="4nh-Pu-bpJ" secondAttribute="width" multiplier="0.0444444" id="uFw-lT-X7l"/>
@@ -401,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqi-Mg-p8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="662"/>
+            <point key="canvasLocation" x="1910.7476635514017" y="661.55507559395255"/>
         </scene>
         <!--Profile-->
         <scene sceneID="xyv-EU-iyd">
@@ -454,7 +464,7 @@
         <scene sceneID="Izc-H5-6qW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h7C-mY-UX2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" id="FgC-3n-MNI"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="message" catalog="system" selectedImage="message.fill" id="FgC-3n-MNI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Y61-8k-Vjc">
                         <rect key="frame" x="0.0" y="47" width="428" height="96"/>
@@ -473,7 +483,7 @@
         <scene sceneID="AtT-aQ-MCP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="emE-pH-5hK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="HTd-ij-q4r"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="HTd-ij-q4r"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="bpi-ja-jCe">
                         <rect key="frame" x="0.0" y="47" width="428" height="96"/>
@@ -513,9 +523,14 @@
         <designable name="KKZ-LX-o6H"/>
     </designables>
     <resources>
+        <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
         <image name="check_unsel_sel" width="21.333333969116211" height="21.333333969116211"/>
         <image name="mail_icon" width="16.333333969116211" height="13"/>
+        <image name="message" catalog="system" width="128" height="116"/>
+        <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="password_icon" width="16.333333969116211" height="18"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="user_icon" width="15.333333015441895" height="16"/>
         <namedColor name="#0079FB">
             <color red="0.0" green="0.47499999403953552" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -526,15 +541,15 @@
         <namedColor name="#707070">
             <color red="0.43900001049041748" green="0.43900001049041748" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="#F1EFF1">
-            <color red="0.94499999284744263" green="0.93699997663497925" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="#FFFFFF">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="2AC7FE">
             <color red="0.16500000655651093" green="0.77999997138977051" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

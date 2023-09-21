@@ -49,7 +49,7 @@ class NewConversationVC: UIViewController {
         searchBar.delegate = self
         view.addSubview(noResultLabel)
         view.addSubview(tableView)
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         navigationController?.navigationBar.topItem?.titleView = searchBar
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel",
                                                             style: .done,
@@ -113,7 +113,7 @@ extension NewConversationVC: UISearchBarDelegate{
         results.removeAll()
         spinner.show(in: view)
         
-        self.searchUsers(query: text)
+        searchUsers(query: text)
     }
     //The function of searching for users in our data base
     func searchUsers(query: String) {
@@ -146,7 +146,7 @@ extension NewConversationVC: UISearchBarDelegate{
         
         self.spinner.dismiss()
         //if the user is serarching for latter a and his account name starts with a never show his account on the search results and return false
-        let results: [SearchResult] = self.users.filter({
+        let results: [SearchResult] = users.filter({
             guard let email = $0["email"] ,
                   email != safeEmail else {
                 return false
@@ -170,17 +170,12 @@ extension NewConversationVC: UISearchBarDelegate{
     // This function based on if there are results will show them in the table otherwise show the no result label
     func updateUI() {
         if results.isEmpty {
-            self.noResultLabel.isHidden = false
-            self.tableView.isHidden = true
+            noResultLabel.isHidden = false
+            tableView.isHidden = true
         } else {
-            self.noResultLabel.isHidden = true
-            self.tableView.isHidden = false
-            self.tableView.reloadData()
+            noResultLabel.isHidden = true
+            tableView.isHidden = false
+            tableView.reloadData()
         }
     }
-}
-
-struct SearchResult {
-    let name: String
-    let email: String
 }
