@@ -3,6 +3,7 @@
 This is a swift project to create a real time chat application using Firebase
 
 ##Features
+
 -Email-Password Registration/Login
 -Photo Messages
 -Video Messages
